@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Poggers | Auth</title>
+</head>
+
+<script>
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const task = urlParams.get('task');
+    const username = urlParams.get('username');
+    
+    async function redirect() {
+
+            if (task === "login") {
+                window.location.replace("https://www.eason.ga/auth/?t=login&u=" + username);
+                return
+            } else if (task === "logout") {
+                window.location.replace("https://www.eason.ga/auth/?t=logout");
+                return
+            } else {
+                window.location.replace("https://www.eason.ga/");
+            }
+
+    }
+    window.onload = redirect()
+</script>
+
+<body style="background-color: #dadada">
+    <div style="text-align: center; margin-top: 50px;">
+        <h1>Poggers Auth</h1>
+        <h3>Redirecting...</h3>
+    </div>
+</body>
